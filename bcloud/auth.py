@@ -289,6 +289,7 @@ def get_bdstoken(cookie):
     '''
     url = const.PAN_REFERER
     req = net.urlopen(url, headers={'Cookie': cookie.header_output()})
+    cookie.load_list(req.headers.get_all('Set-Cookie')) # SCRC
     if req:
         return parse_bdstoken(req.data.decode())
     else:
