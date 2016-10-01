@@ -1,1 +1,7 @@
 test/
+
+# Remove Python3' pycache files
+**/__pycache__
+
+# Untracked build dir
+build/
